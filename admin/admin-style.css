@@ -1,0 +1,193 @@
+.dataspace-btn {
+    background-color: #01D1D1;
+    color: #01122E;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#dataspace-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+#dataspace-popup-wrapper {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #01D1D1;
+    border-radius: 10px;
+    margin-top: 15px;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    max-width: 740px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#dataspace-popup input[type="text"],
+#dataspace-popup input[type="url"] {
+    padding: 8px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#dataspace-popup .admin-button {
+    background-color: #01122E;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.template-selector img {
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+    border-radius: 4px;
+}
+
+.preview-box {
+    border: 2px solid transparent;
+}
+
+.template-selector .layout-option.selected .preview-box {
+    border: 2px solid #01D1D1;
+    box-shadow: 0 0 5px #01D1D1;
+}
+
+.cta-buttons-form {
+    display: none;
+}
+
+.cta-block {
+    background-color: #eef4f7;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    width: 50%;
+}
+
+.tooltip-info {
+    font-size: 0.9em;
+    color: #01122E;
+}
+
+#dataspace-id-error {
+    color: red;
+    margin: 0 0 25px;
+}
+
+.error-message {
+    font-weight: 400;
+}
+
+
+/* ===== Toggle for "button_count" ===== */
+.button-count-toggle {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #cfcfcf;
+    border-radius: 20px;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* Hide native radio buttons */
+.button-count-toggle input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Button label styles */
+.button-count-toggle label {
+    padding: 6px 14px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    /* Above slider */
+    line-height: 1;
+    color: #111;
+    transition: color .2s;
+}
+
+/* Active text - contrast to slider */
+#count-1:checked+label,
+#count-2:checked+label {
+    /* Second label after span */
+    color: #fff;
+}
+
+/* Turquoise "pill" */
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 6px);
+    /* Half container width minus padding */
+    height: calc(100% - 6px);
+    background: #19c7d0;
+    /* Color as in screenshot */
+    border-radius: 16px;
+    transition: transform .25s;
+    z-index: 1;
+}
+
+/* When 2 buttons selected - move slider to the right */
+#count-2:checked~.toggle-slider {
+    transform: translateX(106%);
+}
+
+#close-popup-button {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    #dataspace-popup-wrapper {
+        overflow: auto;
+        max-width: 82vw;
+        max-height: 90%;
+    }
+
+    .cta-blocks {
+        flex-wrap: wrap;
+    }
+
+    .cta-block {
+        width: 100%;
+    }
+
+    .preview-box {
+        max-width: 230px;
+    }
+
+    #fetch-project {
+        margin-top: 30px;
+    }
+}
